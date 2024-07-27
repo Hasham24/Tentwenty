@@ -16,6 +16,17 @@ export const IconSize = {
   large: 40,
   huge: 45,
 };
+export const colors = {
+  darkGray: '#2E2739',
+  mildGray: '#827D88',
+  lightGray: '#DBDBDF',
+  lightGreen: '#15D2BC',
+  pink: '#E26CA5',
+  purple: '#564CA3',
+  yellow: '#CD9D0F',
+  white: '#F6F6FA',
+  lightBlur: '#61C3F2',
+};
 export const FontType = {
   PoppinsBlack: 'Poppins-Black',
   PoppinsBlackItalic: 'Poppins-BlackItalic',
