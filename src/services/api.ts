@@ -6,19 +6,17 @@ import {
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query';
 import {createApi} from '@reduxjs/toolkit/query/react';
+import {ServicesPath} from '~constants';
 
-const prefixUrl = 'https://api.themoviedb.org/3/movie/';
+const prefixUrl = ServicesPath.BASE_URL;
 // `${process.env.API_URL}`;
 
 const baseQuery = fetchBaseQuery({
   baseUrl: prefixUrl,
   prepareHeaders: headers => {
-    const token = process.env.token;
+    const token = ServicesPath.TOKEN;
     if (!isEmpty(token)) {
-      headers.set(
-        'Authorization',
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTc3Y2NjNzI0YjNiNjQxNmNmYTc2MjAwNjUwNTg2YSIsIm5iZiI6MTcyMjA4MzgzMi40NzAxMjgsInN1YiI6IjY2YTRlOGI3NWM0YTgzZTFmNzllYzA5NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A11Tx4FFoHji7fT_9rUQhgUUrJiui3DRhdShrLNQDzU',
-      );
+      headers.set('Authorization', `Bearer ${token}`);
     }
     return headers;
   },

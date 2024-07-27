@@ -1,7 +1,7 @@
 import {Movie, ReducerPath, Method} from '~constants';
 import {api} from '../api';
 
-export const movieApi = api(ReducerPath.movieApi).injectEndpoints({
+export const movieApi = api(ReducerPath.MOVIE_API).injectEndpoints({
   endpoints: build => ({
     getMovies: build.query<IGetMovieResponse, string>({
       query: api_key => ({
