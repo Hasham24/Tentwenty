@@ -1,0 +1,38 @@
+export const FontSize = {
+  tiny: 10,
+  small: 12,
+  standard: 15,
+  regular: 18,
+  medium: 22,
+  large: 30,
+  huge: 40,
+};
+export const IconSize = {
+  tiny: 15,
+  small: 20,
+  standard: 25,
+  regular: 30,
+  medium: 35,
+  large: 40,
+  huge: 45,
+};
+export const FontType = {
+  PoppinsBlack: 'Poppins-Black',
+  PoppinsBlackItalic: 'Poppins-BlackItalic',
+  PoppinsBold: 'Poppins-Bold',
+  PoppinsBoldItalic: 'Poppins-BoldItalic',
+  PoppinsExtraBold: 'Poppins-ExtraBold',
+  PoppinsExtraBoldItalic: 'Poppins-ExtraBoldItalic',
+  PoppinsExtraLight: 'Poppins-ExtraLight',
+  PoppinsExtraLightItalic: 'Poppins-ExtraLightItalic',
+  PoppinsItalic: 'Poppins-Italic',
+  PoppinsLight: 'Poppins-Light',
+  PoppinsLightItalic: 'Poppins-LightItalic',
+  PoppinsMedium: 'Poppins-Medium',
+  PoppinsMediumItalic: 'Poppins-MediumItalic',
+  PoppinsRegular: 'Poppins-Regular',
+  PoppinsSemiBold: 'Poppins-SemiBold',
+  PoppinsSemiBoldItalic: 'Poppins-SemiBoldItalic',
+  PoppinsThin: 'Poppins-Thin',
+  PoppinsThinItalic: 'Poppins-ThinItalic',
+};
