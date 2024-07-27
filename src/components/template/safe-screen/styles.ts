@@ -5,8 +5,8 @@ const useStyle = () => {
   const insets = useSafeAreaInsets();
   return StyleSheet.create({
     container: {
+      flex: 1,
       backgroundColor: colors.white,
-      // Paddings to handle safe area
       paddingTop: insets.top,
       paddingBottom: insets.bottom,
     },

@@ -1,4 +1,6 @@
-export const FontSize = {
+import {Dimensions} from 'react-native';
+
+export const fontSize = {
   tiny: 10,
   small: 12,
   standard: 15,
@@ -7,7 +9,7 @@ export const FontSize = {
   large: 30,
   huge: 40,
 };
-export const IconSize = {
+export const iconSize = {
   tiny: 15,
   small: 20,
   standard: 25,
@@ -20,14 +22,18 @@ export const colors = {
   darkGray: '#2E2739',
   mildGray: '#827D88',
   lightGray: '#DBDBDF',
+  lightGray10: 'rgba(219, 219, 223, 0.3)',
   lightGreen: '#15D2BC',
   pink: '#E26CA5',
   purple: '#564CA3',
   yellow: '#CD9D0F',
-  white: '#F6F6FA',
-  lightBlur: '#61C3F2',
+  whisper: '#F6F6FA',
+  white: '#FFF',
+  black: '#000',
+  lightBlue: '#61C3F2',
+  cloudBurst: '#202C43',
 };
-export const FontType = {
+export const fontFamily = {
   PoppinsBlack: 'Poppins-Black',
   PoppinsBlackItalic: 'Poppins-BlackItalic',
   PoppinsBold: 'Poppins-Bold',
@@ -46,4 +52,24 @@ export const FontType = {
   PoppinsSemiBoldItalic: 'Poppins-SemiBoldItalic',
   PoppinsThin: 'Poppins-Thin',
   PoppinsThinItalic: 'Poppins-ThinItalic',
+};
+export const width = (number: number): number => {
+  let fullWidth = Dimensions.get('window').width;
+  if (number >= 100) {
+    return fullWidth;
+  } else if (number <= 0) {
+    return 0;
+  } else {
+    return fullWidth * (number / 100);
+  }
+};
+export const height = (number: number) => {
+  let fullHeight = Dimensions.get('window').height;
+  if (number >= 100) {
+    return fullHeight;
+  } else if (number <= 0) {
+    return 0;
+  } else {
+    return fullHeight * (number / 100);
+  }
 };

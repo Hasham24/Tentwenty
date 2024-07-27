@@ -15,3 +15,6 @@ export const ServicesPath = {
   TOKEN:
     'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYTc3Y2NjNzI0YjNiNjQxNmNmYTc2MjAwNjUwNTg2YSIsIm5iZiI6MTcyMjA4MzgzMi40NzAxMjgsInN1YiI6IjY2YTRlOGI3NWM0YTgzZTFmNzllYzA5NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A11Tx4FFoHji7fT_9rUQhgUUrJiui3DRhdShrLNQDzU',
 };
+export const ImageSizes = {
+  w1280: 'w1280',
+};

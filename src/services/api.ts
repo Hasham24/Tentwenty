@@ -10,7 +10,6 @@ import {ServicesPath} from '~constants';
 
 const prefixUrl = ServicesPath.BASE_URL;
 // `${process.env.API_URL}`;
-
 const baseQuery = fetchBaseQuery({
   baseUrl: prefixUrl,
   prepareHeaders: headers => {
