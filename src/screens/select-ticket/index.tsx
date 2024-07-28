@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {getFormattedDate} from '~utils';
 import {useTranslation} from 'react-i18next';
-import {SafeScreen, Header, Button, DatePicker} from '~components';
+import {SafeScreen, Header, Button, DatePicker, Cinema} from '~components';
 import useSelectTicket from './useSelectTicket';
 import useStyle from './styles';
 
@@ -23,6 +23,7 @@ const SelectTicket = () => {
       <View style={styles.container}>
         <View style={styles.contentContainer}>
           <DatePicker />
+          <Cinema />
         </View>
         <Button text={t('selectSeats')} style={styles.button} />
       </View>

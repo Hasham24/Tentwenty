@@ -6,5 +6,8 @@
     "genres":"Genres",
     "overview":"Overview",
     "selectSeats":"Select Seats",
-    "date":"Date"
+    "date":"Date",
+    "from":"From",
+    "or":"or",
+    "bonus":"bonus"
 }

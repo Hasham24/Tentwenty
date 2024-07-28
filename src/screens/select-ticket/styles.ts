@@ -4,8 +4,7 @@ const useStyle = () => {
   return StyleSheet.create({
     container: {
       flex: 1,
-      paddingHorizontal: width(5),
-      backgroundColor: colors.lightGray,
+      backgroundColor: colors.whisper,
     },
     contentContainer: {
       flex: 1,
@@ -20,6 +19,7 @@ const useStyle = () => {
       fontWeight: '500',
     },
     button: {
+      marginHorizontal: width(5),
       marginTop: 0,
       marginBottom: height(5),
     },

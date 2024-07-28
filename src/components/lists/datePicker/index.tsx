@@ -31,15 +31,14 @@ const DatePicker: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{t('date')}</Text>
-      <View>
-        <FlatList
-          data={dates}
-          showsHorizontalScrollIndicator={false}
-          horizontal
-          keyExtractor={(_, index) => String(index)}
-          renderItem={renderItem}
-        />
-      </View>
+      <FlatList
+        data={dates}
+        showsHorizontalScrollIndicator={false}
+        horizontal
+        keyExtractor={(_, index) => String(index)}
+        renderItem={renderItem}
+        contentContainerStyle={styles.contentContainer}
+      />
     </View>
   );
 };

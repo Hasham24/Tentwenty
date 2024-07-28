@@ -72,3 +72,11 @@ interface IMovieDetails {
   vote_average: number;
   vote_count: number;
 }
+interface ICinema {
+  id: string;
+  showTime: string;
+  hall: string;
+  currency: string;
+  price: number;
+  bonus: number;
+}

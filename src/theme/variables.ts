@@ -33,6 +33,7 @@ export const colors = {
   transparent: 'transparent',
   lightBlue: '#61C3F2',
   cloudBurst: '#202C43',
+  cloudBurst10: 'rgba(32, 44, 67, 0.1)',
   gray: '#8F8F8F',
   silverChalice: '#A6A6A6',
   silverChalice10: 'rgba(166, 166, 166, 0.1)',

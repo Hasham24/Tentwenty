@@ -11,6 +11,7 @@ const useStyle = () => {
       fontSize: fontSize.standard,
       fontFamily: fontFamily.PoppinsSemiBold,
       marginBottom: height(2.5),
+      marginHorizontal: width(5),
     },
     dateItem: {
       paddingVertical: 6,
@@ -29,6 +30,9 @@ const useStyle = () => {
     },
     selectedDateText: {
       color: colors.white,
+    },
+    contentContainer: {
+      paddingHorizontal: width(5),
     },
   });
 };
