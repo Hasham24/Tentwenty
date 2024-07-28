@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import isEmpty from 'lodash/isEmpty';
 import {
   View,
@@ -41,11 +41,16 @@ const Movies = () => {
       />
       <ScrollView>
         <View>
-          <Image
-            source={{uri: getImage(ImageSizes.w1280, poster_path || '')}}
-            style={styles.image}
-            resizeMode="stretch"
-          />
+          <Suspense
+            fallback={
+              <ActivityIndicator size="large" color={colors.lightBlue} />
+            }>
+            <Image
+              source={{uri: getImage(ImageSizes.w1280, poster_path || '')}}
+              style={styles.image}
+              resizeMode="stretch"
+            />
+          </Suspense>
           <Header
             title={t('watch')}
             containerStyle={styles.header}
