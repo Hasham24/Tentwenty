@@ -22,6 +22,8 @@ export const colors = {
   darkGray: '#2E2739',
   mildGray: '#827D88',
   lightGray: '#DBDBDF',
+  athensGray: '#f2f1f6',
+  gallery: '#EFEFEF',
   lightGray10: 'rgba(219, 219, 223, 0.3)',
   lightGreen: '#15D2BC',
   pink: '#E26CA5',

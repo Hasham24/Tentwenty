@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors, fontFamily, fontSize, height, width} from '~theme';
+import {colors, fontFamily, fontSize, height} from '~theme';
 const useStyle = () => {
   return StyleSheet.create({
     container: {
@@ -7,7 +7,6 @@ const useStyle = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
       backgroundColor: colors.white,
-      paddingHorizontal: width(5),
       paddingVertical: height(1),
     },
     iconButton: {

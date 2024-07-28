@@ -11,12 +11,30 @@ const useStyle = () => {
       paddingVertical: height(1),
     },
     iconButton: {
-      padding: 10,
+      padding: 5,
     },
     text: {
       color: colors.cloudBurst,
       fontSize: fontSize.standard,
       fontFamily: fontFamily.PoppinsSemiBold,
+    },
+    searchContainer: {
+      backgroundColor: colors.athensGray,
+      borderColor: colors.gallery,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginHorizontal: width(5),
+      paddingHorizontal: width(2.5),
+      borderWidth: 1,
+      borderRadius: 30,
+      height: height(7),
+    },
+    textInput: {
+      flex: 1,
+      color: colors.cloudBurst,
+      fontSize: fontSize.standard,
+      paddingHorizontal: width(1),
     },
   });
 };
