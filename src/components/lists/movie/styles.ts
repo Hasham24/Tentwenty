@@ -8,6 +8,12 @@ const useStyle = () => {
       marginTop: height(2),
       height: height(20),
     },
+    activityIndicator: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: [{translateX: -25}, {translateY: -25}],
+    },
     textContainer: {
       bottom: height(2),
       marginHorizontal: width(2.5),

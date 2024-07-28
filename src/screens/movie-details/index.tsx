@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import isEmpty from 'lodash/isEmpty';
 import {
   View,
@@ -18,8 +18,14 @@ import useStyle from './styles';
 
 const Movies = () => {
   const {t} = useTranslation('movie');
-  const {isLoading, data, watchTrailerHandler, selectTickerHandler} =
-    useMovieDetail();
+  const {
+    isLoading,
+    data,
+    loading,
+    setLoading,
+    watchTrailerHandler,
+    selectTickerHandler,
+  } = useMovieDetail();
   const {
     poster_path = '',
     release_date = '',
@@ -41,16 +47,19 @@ const Movies = () => {
       />
       <ScrollView>
         <View>
-          <Suspense
-            fallback={
-              <ActivityIndicator size="large" color={colors.lightBlue} />
-            }>
-            <Image
-              source={{uri: getImage(ImageSizes.w1280, poster_path || '')}}
-              style={styles.image}
-              resizeMode="stretch"
+          {loading && (
+            <ActivityIndicator
+              style={styles.activityIndicator}
+              size="large"
+              color={colors.lightBlue}
             />
-          </Suspense>
+          )}
+          <Image
+            source={{uri: getImage(ImageSizes.w1280, poster_path || '')}}
+            style={styles.image}
+            resizeMode="stretch"
+            onLoadEnd={() => setLoading(false)}
+          />
           <Header
             title={t('watch')}
             containerStyle={styles.header}

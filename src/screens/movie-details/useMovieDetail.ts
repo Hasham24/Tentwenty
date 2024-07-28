@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import {useCallback, useState} from 'react';
 import {isEmpty} from 'lodash';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {useGetMovieDetailsQuery, useGetMovieTrailerQuery} from '~services';
@@ -8,6 +8,7 @@ import {ScreenNames} from '~constants';
 
 type IMovieDetailsRoute = RouteProp<RootStackParamList, 'movieDetails'>;
 export default () => {
+  const [loading, setLoading] = useState<boolean>(true);
   // routes and navigation
   const {navigate} =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -23,5 +24,13 @@ export default () => {
       navigate(ScreenNames.SelectTicket, {movie: data});
     }
   }, [data, navigate]);
-  return {data, isLoading, videoData, selectTickerHandler, watchTrailerHandler};
+  return {
+    data,
+    isLoading,
+    loading,
+    videoData,
+    setLoading,
+    selectTickerHandler,
+    watchTrailerHandler,
+  };
 };

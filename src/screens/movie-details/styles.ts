@@ -42,6 +42,12 @@ const useStyle = () => {
       fontFamily: fontFamily.PoppinsSemiBold,
       fontWeight: '500',
     },
+    activityIndicator: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: [{translateX: -25}, {translateY: -25}],
+    },
     line: {
       marginTop: height(2.5),
     },
