@@ -1,12 +1,13 @@
 import React, {useCallback} from 'react';
+import {isEmpty} from 'lodash';
 import {FlatList, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import {MovieHeader, SafeScreen, MovieItem} from '~components';
+import {MovieHeader, SafeScreen, MovieItem, ScreenLoader} from '~components';
 import useMovie from './useMovie';
 import useStyle from './styles';
 
 const Movies = () => {
-  const {movies, navigationHandler} = useMovie();
+  const {movies, isLoading, navigationHandler} = useMovie();
   const {t} = useTranslation('movie');
   const styles = useStyle();
   const ShowMovies = useCallback(
@@ -17,6 +18,9 @@ const Movies = () => {
     },
     [navigationHandler],
   );
+  if (isLoading && isEmpty(movies)) {
+    return <ScreenLoader />;
+  }
   return (
     <SafeScreen>
       <MovieHeader title={t('watch')} />

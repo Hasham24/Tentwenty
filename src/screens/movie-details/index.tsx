@@ -11,7 +11,14 @@ import {
 import {useTranslation} from 'react-i18next';
 import {getFormattedDate, getImage} from '~utils';
 import {ICON_TYPES, ImageSizes} from '~constants';
-import {Button, VectorIcon, Genres, Separator, Header} from '~components';
+import {
+  Button,
+  VectorIcon,
+  Genres,
+  Separator,
+  Header,
+  ScreenLoader,
+} from '~components';
 import {colors} from '~theme';
 import useMovieDetail from './useMovieDetail';
 import useStyle from './styles';
@@ -36,7 +43,7 @@ const Movies = () => {
 
   // loading state
   if (isLoading && isEmpty(data)) {
-    return <ActivityIndicator color={colors.lightBlue} size={'large'} />;
+    return <ScreenLoader />;
   }
   return (
     <View style={styles.container}>

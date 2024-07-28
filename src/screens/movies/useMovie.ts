@@ -10,7 +10,7 @@ import {selectMovies} from '~store';
 export default () => {
   const {navigate} =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const {} = useGetMoviesQuery(ServicesPath.API_KEY);
+  const {isLoading} = useGetMoviesQuery(ServicesPath.API_KEY);
   const movies = useSelector(selectMovies);
   const navigationHandler = useCallback(
     (id: string) => {
@@ -18,5 +18,5 @@ export default () => {
     },
     [navigate],
   );
-  return {movies, navigationHandler};
+  return {movies, isLoading, navigationHandler};
 };
