@@ -7,7 +7,11 @@ function SafeScreen({children}: PropsWithChildren) {
   const styles = useStyle();
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={'dark-content'} backgroundColor={colors.white} />
+      <StatusBar
+        barStyle={'dark-content'}
+        backgroundColor={colors.white}
+        translucent
+      />
       {children}
     </View>
   );

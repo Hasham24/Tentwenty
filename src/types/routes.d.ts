@@ -1,7 +1,10 @@
 import type {StackScreenProps} from '@react-navigation/stack';
 
 export type RootStackParamList = {
-  movie: undefined;
+  movies: undefined;
+  movieDetails: {
+    id: string;
+  };
 };
 
 export type RootScreenProps<

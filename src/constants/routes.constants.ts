@@ -1,3 +1,4 @@
 export enum ScreenNames {
-  Movie = 'movie',
+  Movies = 'movies',
+  MovieDetails = 'movieDetails',
 }

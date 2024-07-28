@@ -3,7 +3,7 @@ import {Dimensions} from 'react-native';
 export const fontSize = {
   tiny: 10,
   small: 12,
-  standard: 15,
+  standard: 16,
   regular: 18,
   medium: 22,
   large: 30,
@@ -30,8 +30,10 @@ export const colors = {
   whisper: '#F6F6FA',
   white: '#FFF',
   black: '#000',
+  transparent: 'transparent',
   lightBlue: '#61C3F2',
   cloudBurst: '#202C43',
+  gray: '#8F8F8F',
 };
 export const fontFamily = {
   PoppinsBlack: 'Poppins-Black',

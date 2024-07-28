@@ -4,6 +4,7 @@ export const Method = {
 };
 export const Movie = {
   GET_MOVIES: 'upcoming',
+  GET_TRAILER: '/videos',
 };
 export const ReducerPath = {
   MOVIE_API: 'movieApi',

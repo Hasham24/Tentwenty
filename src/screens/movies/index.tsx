@@ -1,18 +1,25 @@
 import React, {useCallback} from 'react';
 import {FlatList, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import {MovieHeader, SafeScreen, MovieItem} from '~components';
 import useMovie from './useMovie';
 import useStyle from './styles';
 
 const Movies = () => {
-  const {results} = useMovie();
+  const {results, navigationHandler} = useMovie();
+  const {t} = useTranslation('movie');
   const styles = useStyle();
-  const ShowMovies = useCallback(({item}: {item: IMovie}) => {
-    return <MovieItem item={item} />;
-  }, []);
+  const ShowMovies = useCallback(
+    ({item}: {item: IMovie}) => {
+      return (
+        <MovieItem item={item} onPress={() => navigationHandler(item?.id)} />
+      );
+    },
+    [navigationHandler],
+  );
   return (
     <SafeScreen>
-      <MovieHeader title="Watch" />
+      <MovieHeader title={t('watch')} />
       <View style={styles.container}>
         <FlatList
           data={results}
