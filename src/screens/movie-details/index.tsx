@@ -18,7 +18,7 @@ import useStyle from './styles';
 
 const Movies = () => {
   const {t} = useTranslation('movie');
-  const {isLoading, data} = useMovieDetail();
+  const {isLoading, data, watchTrailerHandler} = useMovieDetail();
   const {
     poster_path = '',
     release_date = '',
@@ -26,7 +26,6 @@ const Movies = () => {
     overview = '',
   } = data || {};
   const styles = useStyle();
-  console.log(genres);
 
   // loading state
   if (isLoading && isEmpty(data)) {
@@ -68,6 +67,7 @@ const Movies = () => {
                   color={colors.white}
                 />
               }
+              onPress={watchTrailerHandler}
             />
           </View>
         </View>
