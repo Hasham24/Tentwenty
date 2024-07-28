@@ -1,4 +1,5 @@
 import React from 'react';
+import {isEmpty} from 'lodash';
 import {
   Text,
   View,
@@ -18,8 +19,8 @@ import useStyle from './styles';
 interface IHeader {
   title: string;
   iconColor?: string;
+  descriptionText?: string;
   containerStyle?: StyleProp<ViewStyle>;
-  titleContainerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
 }
 
@@ -27,10 +28,10 @@ const Header: React.FC<IHeader> = props => {
   const styles = useStyle();
   const {
     title = '',
-    titleContainerStyle,
     containerStyle,
     iconColor = colors.black,
     textStyle,
+    descriptionText = '',
   } = props;
   const {goBack} =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -47,9 +48,13 @@ const Header: React.FC<IHeader> = props => {
           color={iconColor}
         />
       </TouchableOpacity>
-      <View style={[styles.textContainer, titleContainerStyle]}>
+      <View>
         <Text style={[styles.text, textStyle]}>{title}</Text>
+        {!isEmpty(descriptionText) && (
+          <Text style={[styles.descriptionText]}>{descriptionText}</Text>
+        )}
       </View>
+      <View style={styles.empty} />
     </View>
   );
 };

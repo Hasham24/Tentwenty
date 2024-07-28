@@ -44,7 +44,7 @@ interface IProductionCountry {
   iso_3166_1: string;
   name: string;
 }
-interface IGetMovieDetails {
+interface IMovieDetails {
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: any;

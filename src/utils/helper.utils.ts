@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import {ServicesPath} from '~constants';
 
 const getImage = (size: string, path: string): string => {
@@ -13,4 +14,8 @@ const getFormattedDate = (date: string) => {
   const formattedDate = newDate.toLocaleDateString('en-US', options);
   return formattedDate;
 };
-export {getImage, getFormattedDate};
+const generateDates = (startDate: dayjs.Dayjs, days: number) => {
+  return Array.from({length: days}, (_, i) => startDate.add(i, 'day'));
+};
+
+export {getImage, getFormattedDate, generateDates};

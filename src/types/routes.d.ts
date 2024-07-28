@@ -6,6 +6,9 @@ export type RootStackParamList = {
   movieDetails: {
     id: string;
   };
+  selectTicket: {
+    movie: IMovieDetails;
+  };
 };
 
 export type RootScreenProps<

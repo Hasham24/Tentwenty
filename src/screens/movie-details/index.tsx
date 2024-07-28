@@ -18,7 +18,8 @@ import useStyle from './styles';
 
 const Movies = () => {
   const {t} = useTranslation('movie');
-  const {isLoading, data, watchTrailerHandler} = useMovieDetail();
+  const {isLoading, data, watchTrailerHandler, selectTickerHandler} =
+    useMovieDetail();
   const {
     poster_path = '',
     release_date = '',
@@ -54,7 +55,7 @@ const Movies = () => {
             <Text style={styles.theaters}>
               {`${t('inTheaters')}${getFormattedDate(release_date || '')}`}
             </Text>
-            <Button text={t('getTickets')} />
+            <Button text={t('getTickets')} onPress={selectTickerHandler} />
             <Button
               text={t('watchTrailer')}
               style={styles.button}

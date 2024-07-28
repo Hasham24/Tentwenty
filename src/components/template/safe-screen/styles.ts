@@ -8,7 +8,6 @@ const useStyle = () => {
       flex: 1,
       backgroundColor: colors.white,
       paddingTop: insets.top,
-      paddingBottom: insets.bottom,
     },
   });
 };

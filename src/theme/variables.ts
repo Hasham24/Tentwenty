@@ -34,6 +34,8 @@ export const colors = {
   lightBlue: '#61C3F2',
   cloudBurst: '#202C43',
   gray: '#8F8F8F',
+  silverChalice: '#A6A6A6',
+  silverChalice10: 'rgba(166, 166, 166, 0.1)',
 };
 export const fontFamily = {
   PoppinsBlack: 'Poppins-Black',

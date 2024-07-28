@@ -21,6 +21,14 @@ const useStyle = () => {
       fontSize: fontSize.standard,
       fontFamily: fontFamily.PoppinsSemiBold,
     },
+    descriptionText: {
+      color: colors.lightBlue,
+      fontSize: fontSize.standard,
+      fontFamily: fontFamily.PoppinsSemiBold,
+    },
+    empty: {
+      width: 30,
+    },
   });
 };
 export default useStyle;
