@@ -6,7 +6,7 @@ import useMovie from './useMovie';
 import useStyle from './styles';
 
 const Movies = () => {
-  const {results, navigationHandler} = useMovie();
+  const {movies, navigationHandler} = useMovie();
   const {t} = useTranslation('movie');
   const styles = useStyle();
   const ShowMovies = useCallback(
@@ -22,7 +22,7 @@ const Movies = () => {
       <MovieHeader title={t('watch')} />
       <View style={styles.container}>
         <FlatList
-          data={results}
+          data={movies}
           showsVerticalScrollIndicator={false}
           renderItem={ShowMovies}
           keyExtractor={(_, index) => String(index)}

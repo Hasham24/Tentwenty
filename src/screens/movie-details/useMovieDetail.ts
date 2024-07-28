@@ -15,7 +15,6 @@ export default () => {
   const {id = ''} = route?.params || {};
   const {data, isLoading} = useGetMovieDetailsQuery(id);
   const {data: videoData} = useGetMovieTrailerQuery(id);
-  console.log(videoData);
   const watchTrailerHandler = useCallback(() => {
     navigate(ScreenNames.WatchTrailer);
   }, [navigate]);
@@ -24,5 +23,5 @@ export default () => {
       navigate(ScreenNames.SelectTicket, {movie: data});
     }
   }, [data, navigate]);
-  return {data, isLoading, selectTickerHandler, watchTrailerHandler};
+  return {data, isLoading, videoData, selectTickerHandler, watchTrailerHandler};
 };

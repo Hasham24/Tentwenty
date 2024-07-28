@@ -24,6 +24,7 @@ const useStyle = () => {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
+      marginBottom: height(1),
       marginHorizontal: width(5),
       paddingHorizontal: width(2.5),
       borderWidth: 1,
