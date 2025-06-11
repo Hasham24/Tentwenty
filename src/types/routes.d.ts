@@ -1,6 +1,5 @@
-import type {StackScreenProps} from '@react-navigation/stack';
-
-export type RootStackParamList = {
+type StackScreenProps = import('@react-navigation/stack').StackScreenProps;
+type RootStackParamList = {
   movies: undefined;
   watchTrailer: undefined;
   movieDetails: {
@@ -11,6 +10,6 @@ export type RootStackParamList = {
   };
 };
 
-export type RootScreenProps<
+type RootScreenProps<
   S extends keyof RootStackParamList = keyof RootStackParamList,
 > = StackScreenProps<RootStackParamList, S>;

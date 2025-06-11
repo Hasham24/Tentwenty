@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from 'react-native-screens/lib/typescript/native-stack/types';
-import {RootStackParamList} from '~types/routes';
 import {VectorIcon} from '~components';
 import {colors, iconSize} from '~theme';
 import {ICON_TYPES} from '~constants';

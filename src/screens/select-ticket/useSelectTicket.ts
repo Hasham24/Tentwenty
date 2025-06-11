@@ -1,14 +1,15 @@
+import {Alert} from 'react-native';
 import {useCallback} from 'react';
-import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
-import {NativeStackNavigationProp} from 'react-native-screens/lib/typescript/native-stack/types';
-import {RootStackParamList} from '~types/routes';
+import {RouteProp, useRoute} from '@react-navigation/native';
+
 type ISelectTicketRoute = RouteProp<RootStackParamList, 'selectTicket'>;
 export default () => {
-  // routes and navigation
-  const {navigate} =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const route = useRoute<ISelectTicketRoute>();
   const {movie} = route?.params || {};
 
-  return {movie};
+  const selectSeatHandler = useCallback(() => {
+    Alert.alert('Seat Selected', 'You have selected a seat.');
+  }, []);
+
+  return {movie, selectSeatHandler};
 };

@@ -3,7 +3,6 @@ import {isEmpty} from 'lodash';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {useGetMovieDetailsQuery, useGetMovieTrailerQuery} from '~services';
 import {NativeStackNavigationProp} from 'react-native-screens/lib/typescript/native-stack/types';
-import {RootStackParamList} from '~types/routes';
 import {ScreenNames} from '~constants';
 
 type IMovieDetailsRoute = RouteProp<RootStackParamList, 'movieDetails'>;

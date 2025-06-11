@@ -4,7 +4,6 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from 'react-native-screens/lib/typescript/native-stack/types';
 import {ScreenNames, ServicesPath} from '~constants';
 import {useGetMoviesQuery} from '~services';
-import {RootStackParamList} from '~types/routes';
 import {selectMovies} from '~store';
 
 export default () => {

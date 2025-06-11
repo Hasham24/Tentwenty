@@ -4,7 +4,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Movies, MovieDetails, WatchTrailer, SelectTicket} from '~screens';
 import {ScreenNames} from '~constants';
-import {RootStackParamList} from '~types/routes';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
