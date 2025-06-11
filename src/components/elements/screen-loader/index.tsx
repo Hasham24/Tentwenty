@@ -2,12 +2,18 @@ import React from 'react';
 import {ActivityIndicator} from 'react-native';
 import {SafeScreen} from '~components';
 import {colors} from '~theme';
+import useStyle from './styles';
 
-const screenLoader = () => {
+const ScreenLoader = () => {
+  const styles = useStyle();
   return (
     <SafeScreen>
-      <ActivityIndicator color={colors.lightBlue} size={'large'} />
+      <ActivityIndicator
+        size={'large'}
+        color={colors.lightBlue}
+        style={styles.indicator}
+      />
     </SafeScreen>
   );
 };
-export default screenLoader;
+export default React.memo(ScreenLoader);
