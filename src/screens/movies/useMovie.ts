@@ -9,7 +9,8 @@ import {selectMovies} from '~store';
 export default () => {
   const {navigate} =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const {isLoading} = useGetMoviesQuery(ServicesPath.API_KEY);
+  const {isLoading, data} = useGetMoviesQuery(ServicesPath.API_KEY);
+  console.log(data, 'data');
   const movies = useSelector(selectMovies);
   const navigationHandler = useCallback(
     (id: string) => {

@@ -14,18 +14,16 @@ const useStyle = () => {
       left: '50%',
       transform: [{translateX: -25}, {translateY: -25}],
     },
-    textContainer: {
+    title: {
+      position: 'absolute',
       bottom: height(2),
       marginHorizontal: width(2.5),
-      padding: 2,
-      borderRadius: 5,
-      backgroundColor: colors.lightGray10,
-      position: 'absolute',
-    },
-    title: {
       color: colors.white,
       fontSize: fontSize.regular,
       fontFamily: fontFamily.PoppinsSemiBold,
+      textShadowColor: colors.black,
+      textShadowOffset: {width: -1, height: 1},
+      textShadowRadius: 10,
     },
   });
 };

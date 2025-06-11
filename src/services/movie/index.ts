@@ -7,7 +7,7 @@ export const movieApi = api(ReducerPath.MOVIE_API).injectEndpoints({
       query: api_key => ({
         url: Movie.GET_MOVIES,
         method: Method.GET,
-        params: {api_key, limit: 10},
+        params: {api_key, page: 2},
       }),
     }),
     getMovieDetails: build.query<IMovieDetails, string>({
