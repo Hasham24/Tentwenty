@@ -7,7 +7,7 @@ const useStyle = () => {
     },
     image: {
       width: width(100),
-      height: height(50),
+      height: height(55),
     },
     header: {
       position: 'absolute',

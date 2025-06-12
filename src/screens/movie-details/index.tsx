@@ -64,7 +64,7 @@ const Movies = () => {
           <Image
             source={{uri: getImage(ImageSizes.w1280, poster_path || '')}}
             style={styles.image}
-            resizeMode="stretch"
+            resizeMode="cover"
             onLoadEnd={() => setLoading(false)}
           />
           <Header
