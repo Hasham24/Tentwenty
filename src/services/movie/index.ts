@@ -1,13 +1,17 @@
-import {Movie, ReducerPath, Method} from '~constants';
+import {Movie, ReducerPath, Method, ServicesPath} from '~constants';
 import {api} from '../api';
 
 export const movieApi = api(ReducerPath.MOVIE_API).injectEndpoints({
   endpoints: build => ({
-    getMovies: build.query<IGetMoviesResponse, string>({
-      query: api_key => ({
+    getMovies: build.query<IGetMoviesResponse, IGetMoviesRequest>({
+      query: data => ({
         url: Movie.GET_MOVIES,
         method: Method.GET,
-        params: {api_key, page: 2},
+        params: {
+          api_key: ServicesPath.API_KEY,
+          page: data.page,
+          query: 'sin',
+        },
       }),
     }),
     getMovieDetails: build.query<IMovieDetails, string>({

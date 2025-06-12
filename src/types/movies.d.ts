@@ -25,6 +25,10 @@ interface IGetMoviesResponse {
   total_pages: number;
   total_results: number;
 }
+interface IGetMoviesRequest {
+  page: number;
+  query?: string;
+}
 interface IGenre {
   id: number;
   name: string;

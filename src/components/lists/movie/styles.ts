@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {colors, height, width, fontFamily, fontSize} from '~theme';
+import {colors, height, fontFamily, fontSize} from '~theme';
 const useStyle = () => {
   return StyleSheet.create({
     image: {
       width: '100%',
       borderRadius: 10,
       marginTop: height(2),
-      height: height(20),
+      height: 180,
     },
     activityIndicator: {
       position: 'absolute',
@@ -16,8 +16,8 @@ const useStyle = () => {
     },
     title: {
       position: 'absolute',
-      bottom: height(2),
-      marginHorizontal: width(2.5),
+      bottom: 16,
+      marginHorizontal: 16,
       color: colors.white,
       fontSize: fontSize.regular,
       fontFamily: fontFamily.PoppinsSemiBold,

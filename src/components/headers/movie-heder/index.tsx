@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {Text, View, TouchableOpacity, TextInput} from 'react-native';
 import {useTranslation} from 'react-i18next';
@@ -17,14 +17,17 @@ const Header: React.FC<IHeader> = props => {
   const [query, setQuery] = useState<string>('');
   const styles = useStyle();
   const {title = ''} = props;
-  const searchHandler = () => {
+  const searchHandler = useCallback(() => {
     setIsSearch(!isSearch);
     setQuery('');
-  };
-  const search = (val = '') => {
-    dispatch(filterMoviesByTitle(val));
-    setQuery(val);
-  };
+  }, [isSearch]);
+  const search = useCallback(
+    (val = '') => {
+      dispatch(filterMoviesByTitle(val));
+      setQuery(val);
+    },
+    [dispatch],
+  );
   return (
     <View>
       {!isSearch ? (
