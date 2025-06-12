@@ -27,7 +27,6 @@ interface IGetMoviesResponse {
 }
 interface IGetMoviesRequest {
   page: number;
-  query?: string;
 }
 interface IGenre {
   id: number;

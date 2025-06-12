@@ -11,7 +11,6 @@ export default () => {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [params, setParams] = useState({
     page: 1,
-    query: '',
   });
   const {isLoading} = useGetMoviesQuery(params, {
     refetchOnMountOrArgChange: true,

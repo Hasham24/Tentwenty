@@ -10,7 +10,6 @@ export const movieApi = api(ReducerPath.MOVIE_API).injectEndpoints({
         params: {
           api_key: ServicesPath.API_KEY,
           page: data.page,
-          query: 'sin',
         },
       }),
     }),
