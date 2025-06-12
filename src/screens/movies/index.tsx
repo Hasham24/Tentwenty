@@ -8,7 +8,14 @@ import useStyle from './styles';
 
 const Movies = () => {
   const styles = useStyle();
-  const {movies, isLoading, navigationHandler} = useMovie();
+  const {
+    movies,
+    isLoading,
+    refreshing,
+    navigationHandler,
+    onEndReachedHandler,
+    onRefreshHandler,
+  } = useMovie();
   const {t} = useTranslation('movie');
 
   const ShowMovies = useCallback(
@@ -29,9 +36,12 @@ const Movies = () => {
         <FlatList
           data={movies}
           showsVerticalScrollIndicator={false}
-          renderItem={ShowMovies}
+          refreshing={refreshing}
           keyExtractor={(_, index) => String(index)}
           contentContainerStyle={styles.contentContainer}
+          renderItem={ShowMovies}
+          onEndReached={onEndReachedHandler}
+          onRefresh={onRefreshHandler}
         />
       </View>
     </SafeScreen>

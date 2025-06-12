@@ -3,13 +3,13 @@ import {api} from '../api';
 
 export const movieApi = api(ReducerPath.MOVIE_API).injectEndpoints({
   endpoints: build => ({
-    getMovies: build.query<IGetMoviesResponse, IGetMoviesRequest>({
-      query: data => ({
+    getMovies: build.query<IGetMoviesResponse, number>({
+      query: page => ({
         url: Movie.GET_MOVIES,
         method: Method.GET,
         params: {
           api_key: ServicesPath.API_KEY,
-          page: data.page,
+          page,
         },
       }),
     }),

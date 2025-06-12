@@ -19,8 +19,14 @@ const movieSlice = createSlice({
     builder.addMatcher(
       movieApi.endpoints.getMovies.matchFulfilled,
       (state, {payload}) => {
-        state.allMovies = payload?.results;
-        state.movies = payload?.results;
+        state.allMovies =
+          payload?.page === 1
+            ? payload?.results
+            : [...state.movies, ...payload?.results];
+        state.movies =
+          payload?.page === 1
+            ? payload?.results
+            : [...state.movies, ...payload?.results];
       },
     );
   },

@@ -12,11 +12,12 @@ interface IHeader {
 
 const Header: React.FC<IHeader> = props => {
   const dispatch = useDispatch();
+  const styles = useStyle();
   const {t} = useTranslation('movie');
   const [isSearch, setIsSearch] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
-  const styles = useStyle();
   const {title = ''} = props;
+
   const searchHandler = useCallback(() => {
     setIsSearch(!isSearch);
     setQuery('');
@@ -28,37 +29,38 @@ const Header: React.FC<IHeader> = props => {
     },
     [dispatch],
   );
+  if (!isSearch) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>{title}</Text>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          style={styles.iconButton}
+          onPress={searchHandler}>
+          <VectorIcon name="search1" size={iconSize.regular} />
+        </TouchableOpacity>
+      </View>
+    );
+  }
   return (
     <View>
-      {!isSearch ? (
-        <View style={styles.container}>
-          <Text style={styles.text}>{title}</Text>
-          <TouchableOpacity
-            activeOpacity={0.7}
-            style={styles.iconButton}
-            onPress={searchHandler}>
-            <VectorIcon name="search1" size={iconSize.regular} />
-          </TouchableOpacity>
+      <View style={styles.searchContainer}>
+        <View style={styles.iconButton}>
+          <VectorIcon name="search1" size={iconSize.small} />
         </View>
-      ) : (
-        <View style={styles.searchContainer}>
-          <View style={styles.iconButton}>
-            <VectorIcon name="search1" size={iconSize.regular} />
-          </View>
-          <TextInput
-            placeholder={t('placeholder')}
-            value={query}
-            onChangeText={search}
-            style={styles.textInput}
-          />
-          <TouchableOpacity
-            activeOpacity={0.7}
-            style={styles.iconButton}
-            onPress={searchHandler}>
-            <VectorIcon name="close" size={iconSize.regular} />
-          </TouchableOpacity>
-        </View>
-      )}
+        <TextInput
+          placeholder={t('placeholder')}
+          value={query}
+          onChangeText={search}
+          style={styles.textInput}
+        />
+        <TouchableOpacity
+          activeOpacity={0.7}
+          style={styles.iconButton}
+          onPress={searchHandler}>
+          <VectorIcon name="close" size={iconSize.regular} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

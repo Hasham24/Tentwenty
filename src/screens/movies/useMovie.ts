@@ -9,33 +9,44 @@ import {selectMovies} from '~store';
 export default () => {
   const {navigate} =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const [params, setParams] = useState({
-    page: 1,
-  });
-  const {isLoading} = useGetMoviesQuery(params, {
+  const [page, setPage] = useState<number>(1);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
+  const {isLoading} = useGetMoviesQuery(page, {
     refetchOnMountOrArgChange: true,
   });
   const movies = useSelector(selectMovies);
+  // Determine if there is more data to fetch
+  const hasMore = movies?.length % 20 === 0 && movies?.length !== 0; // assuming 20 per page
+
   const navigationHandler = useCallback(
     (id: string) => {
       navigate(ScreenNames.MovieDetails, {id});
     },
     [navigate],
   );
-  const onEndReachedHandler = useCallback(() => {}, []);
-  const onRefreshHandler = useCallback(() => {}, []);
-  const searchHandler = useCallback((query: string) => {
-    setParams(prev => ({
-      ...prev,
-      query,
-    }));
-  }, []);
+  const onEndReachedHandler = useCallback(() => {
+    if (!isLoading && hasMore) {
+      setPage(prev => prev + 1);
+    }
+  }, [isLoading, hasMore]);
+
+  const onRefreshHandler = useCallback(() => {
+    if (!isLoading) {
+      setRefreshing(true);
+      setPage(1);
+    }
+  }, [isLoading]);
+
+  // Set refreshing to false when loading is done and page is 1
+  if (refreshing && !isLoading && page === 1) {
+    setRefreshing(false);
+  }
 
   return {
     movies,
     isLoading,
+    refreshing,
     navigationHandler,
-    searchHandler,
     onEndReachedHandler,
     onRefreshHandler,
   };
