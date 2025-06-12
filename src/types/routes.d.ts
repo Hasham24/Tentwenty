@@ -1,4 +1,5 @@
 type StackScreenProps = import('@react-navigation/stack').StackScreenProps;
+type Dayjs = import('dayjs').Dayjs;
 type RootStackParamList = {
   movies: undefined;
   watchTrailer: undefined;
@@ -7,6 +8,11 @@ type RootStackParamList = {
   };
   selectTicket: {
     movie: IMovieDetails;
+  };
+  checkoutTicket: {
+    movie: IMovieDetails;
+    date: Dayjs;
+    cinema: ICinema;
   };
 };
 

@@ -2,7 +2,13 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {Movies, MovieDetails, WatchTrailer, SelectTicket} from '~screens';
+import {
+  Movies,
+  MovieDetails,
+  WatchTrailer,
+  SelectTicket,
+  CheckoutTicket,
+} from '~screens';
 import {ScreenNames} from '~constants';
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -24,6 +30,10 @@ const RoutesNavigator = () => {
           <Stack.Screen
             name={ScreenNames.SelectTicket}
             component={SelectTicket}
+          />
+          <Stack.Screen
+            name={ScreenNames.CheckoutTicket}
+            component={CheckoutTicket}
           />
         </Stack.Navigator>
       </NavigationContainer>

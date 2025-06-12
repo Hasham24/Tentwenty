@@ -47,10 +47,14 @@ const Header: React.FC<IHeader> = props => {
           color={iconColor}
         />
       </TouchableOpacity>
-      <View>
-        <Text style={[styles.text, textStyle]}>{title}</Text>
+      <View style={styles.textContainer}>
+        <Text numberOfLines={2} style={[styles.text, textStyle]}>
+          {title}
+        </Text>
         {!isEmpty(descriptionText) && (
-          <Text style={[styles.descriptionText]}>{descriptionText}</Text>
+          <Text numberOfLines={2} style={[styles.descriptionText]}>
+            {descriptionText}
+          </Text>
         )}
       </View>
       <View style={styles.empty} />

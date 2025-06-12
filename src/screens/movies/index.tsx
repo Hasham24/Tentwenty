@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {isEmpty} from 'lodash';
-import {FlatList, View} from 'react-native';
+import {FlatList, View, ListRenderItem} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {MovieHeader, SafeScreen, MovieItem, ScreenLoader} from '~components';
 import useMovie from './useMovie';
@@ -18,8 +18,8 @@ const Movies = () => {
   } = useMovie();
   const {t} = useTranslation('movie');
 
-  const ShowMovies = useCallback(
-    ({item}: {item: IMovie}) => {
+  const ShowMovies: ListRenderItem<IMovie> = useCallback(
+    ({item}) => {
       return (
         <MovieItem item={item} onPress={() => navigationHandler(item?.id)} />
       );
@@ -36,12 +36,12 @@ const Movies = () => {
         <FlatList
           data={movies}
           showsVerticalScrollIndicator={false}
-          refreshing={refreshing}
+          renderItem={ShowMovies}
           keyExtractor={(_, index) => String(index)}
           contentContainerStyle={styles.contentContainer}
-          renderItem={ShowMovies}
           onEndReached={onEndReachedHandler}
           onRefresh={onRefreshHandler}
+          refreshing={refreshing}
         />
       </View>
     </SafeScreen>

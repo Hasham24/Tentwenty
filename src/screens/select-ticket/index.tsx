@@ -7,25 +7,44 @@ import useSelectTicket from './useSelectTicket';
 import useStyle from './styles';
 
 const SelectTicket = () => {
-  const {t} = useTranslation('movie');
-  const {movie} = useSelectTicket();
-  const {title, release_date} = movie;
   const styles = useStyle();
+  const {t} = useTranslation('movie');
+  const {
+    movie,
+    selectedDate,
+    selectedCinema,
+    setSelectedCinema,
+    selectSeatHandler,
+    setSelectedDate,
+  } = useSelectTicket();
+  const {title, release_date} = movie;
+
   return (
     <SafeScreen>
       <Header
         title={title}
         textStyle={styles.text}
-        descriptionText={`${t('inTheaters')}${getFormattedDate(
+        descriptionText={`${t('inTheaters')} ${getFormattedDate(
           release_date || '',
         )}`}
       />
       <View style={styles.container}>
         <View style={styles.contentContainer}>
-          <DatePicker />
-          <Cinema />
+          <DatePicker
+            selectedDate={selectedDate}
+            setSelectDate={setSelectedDate}
+          />
+          <Cinema
+            selectedCinema={selectedCinema}
+            setSelectedCinema={setSelectedCinema}
+          />
         </View>
-        <Button text={t('selectSeats')} style={styles.button} />
+        <Button
+          style={styles.button}
+          disabled={!selectedCinema}
+          text={t('selectSeats')}
+          onPress={selectSeatHandler}
+        />
       </View>
     </SafeScreen>
   );

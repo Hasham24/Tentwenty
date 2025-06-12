@@ -19,11 +19,15 @@ const useStyle = () => {
       color: colors.white,
       fontSize: fontSize.standard,
       fontFamily: fontFamily.PoppinsSemiBold,
+      marginHorizontal: 10,
+      textAlign: 'center',
     },
     descriptionText: {
       color: colors.lightBlue,
-      fontSize: fontSize.standard,
+      fontSize: fontSize.small,
       fontFamily: fontFamily.PoppinsSemiBold,
+      marginHorizontal: 10,
+      textAlign: 'center',
     },
     empty: {
       width: 30,

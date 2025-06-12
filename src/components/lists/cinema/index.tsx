@@ -1,15 +1,27 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  Image,
+  ListRenderItem,
+} from 'react-native';
 import {cinemaData} from '~dummyData';
-import useStyle from './styles';
 import {AppImages} from '~assets';
+import useStyle from './styles';
 
-const Cinema: React.FC = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+interface ICinemaProps {
+  selectedCinema: ICinema | null;
+  setSelectedCinema: (cinema: ICinema) => void;
+}
+const Cinema: React.FC<ICinemaProps> = props => {
+  const {selectedCinema, setSelectedCinema} = props;
   const styles = useStyle();
   const {t} = useTranslation('movie');
-  const renderItem = ({item, index}: {item: ICinema; index: number}) => {
+  const renderItem: ListRenderItem<ICinema> = ({item}) => {
+    const isSelected = item?.id === selectedCinema?.id;
     return (
       <View>
         <Text style={styles.showTime}>
@@ -17,11 +29,11 @@ const Cinema: React.FC = () => {
           <Text style={styles.hall}>{`  ${item?.hall}`}</Text>
         </Text>
         <TouchableOpacity
-          onPress={() => setSelectedIndex(index)}
+          onPress={() => setSelectedCinema(item)}
           activeOpacity={0.8}
           style={[
             styles.seatContainer,
-            selectedIndex === index && styles.selectedSeatContainer,
+            isSelected && styles.selectedSeatContainer,
           ]}>
           <Image
             source={AppImages.map}

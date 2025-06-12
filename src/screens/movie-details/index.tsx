@@ -74,7 +74,7 @@ const Movies = () => {
           />
           <View style={styles.buttonContainer}>
             <Text style={styles.theaters}>
-              {`${t('inTheaters')}${getFormattedDate(release_date || '')}`}
+              {`${t('inTheaters')} ${getFormattedDate(release_date || '')}`}
             </Text>
             <Button text={t('getTickets')} onPress={selectTickerHandler} />
             <Button

@@ -11,6 +11,9 @@ const useStyle = () => {
       borderRadius: 10,
       marginTop: height(1),
     },
+    disabled: {
+      opacity: 0.5,
+    },
     iconButton: {
       padding: 10,
     },

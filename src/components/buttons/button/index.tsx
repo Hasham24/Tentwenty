@@ -31,7 +31,7 @@ const Button = (props: IButton) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, style]}
+      style={[styles.container, disabled && styles.disabled, style]}
       disabled={disabled}
       activeOpacity={0.95}>
       {hasIcon && <View style={styles.iconView}>{icon}</View>}

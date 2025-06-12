@@ -3,4 +3,5 @@ export enum ScreenNames {
   MovieDetails = 'movieDetails',
   WatchTrailer = 'watchTrailer',
   SelectTicket = 'selectTicket',
+  CheckoutTicket = 'checkoutTicket',
 }
