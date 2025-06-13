@@ -1,6 +1,7 @@
 import {Dimensions} from 'react-native';
 
 export const fontSize = {
+  xTiny: 8,
   tiny: 10,
   small: 12,
   standard: 16,

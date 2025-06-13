@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   StyleProp,
   ViewStyle,
+  ImageStyle,
   Image,
   Text,
 } from 'react-native';
@@ -14,7 +15,10 @@ interface IProps {
   seats: ISeats[][];
   selectedSeats?: string[];
   disabled?: boolean;
+  showIndex?: boolean;
   seatStyle?: StyleProp<ViewStyle>;
+  rowStyle?: StyleProp<ViewStyle>;
+  imageStyle?: StyleProp<ImageStyle>;
   onSelectSeat?: (seatId: string) => void;
 }
 
@@ -23,7 +27,10 @@ const SeatsGrid: React.FC<IProps> = props => {
     seats,
     selectedSeats = [],
     disabled = false,
-    seatStyle = {},
+    seatStyle,
+    rowStyle,
+    showIndex = false,
+    imageStyle,
     onSelectSeat = () => undefined,
   } = props;
   const styles = useStyle();
@@ -52,12 +59,13 @@ const SeatsGrid: React.FC<IProps> = props => {
         <Image
           source={AppImages.curve}
           resizeMode="contain"
-          style={styles.curvedLineImage}
+          style={[styles.curvedLineImage, imageStyle]}
         />
-        <Text style={styles.label}>SCREEN</Text>
+        {showIndex && <Text style={styles.label}>SCREEN</Text>}
       </View>
       {seats.map((row, rowIndex) => (
-        <View key={`row-${rowIndex}`} style={styles.row}>
+        <View key={`row-${rowIndex}`} style={[styles.row, rowStyle]}>
+          {showIndex && <Text style={styles.rowIndex}>{rowIndex + 1}</Text>}
           {row.map(seat => {
             const isSelected = selectedSeats.includes(seat.id);
             const seatStyleType = getSeatStyle(seat.type, isSelected);
