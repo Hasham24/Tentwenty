@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '~theme';
+import {colors, fontFamily, fontSize} from '~theme';
 
 const useStyle = () => {
   return StyleSheet.create({
@@ -24,7 +24,8 @@ const useStyle = () => {
     },
     zoomButton: {
       backgroundColor: colors.white,
-      borderWidth: 1,
+      borderColor: colors.gallery,
+      borderWidth: 0.5,
       borderRadius: 20,
       width: 36,
       height: 36,
@@ -32,8 +33,8 @@ const useStyle = () => {
       alignItems: 'center',
     },
     zoomText: {
-      fontSize: 24,
-      fontWeight: '600',
+      fontSize: fontSize.regular,
+      fontFamily: fontFamily.PoppinsMedium,
     },
   });
 };
