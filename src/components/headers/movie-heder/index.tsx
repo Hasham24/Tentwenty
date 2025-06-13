@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {Text, View, TouchableOpacity, TextInput} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {VectorIcon} from '~components';
-import {iconSize} from '~theme';
+import {colors, iconSize} from '~theme';
 import {filterMoviesByTitle} from '~store';
 import useStyle from './styles';
 interface IHeader {
@@ -50,6 +50,7 @@ const MovieHeader: React.FC<IHeader> = props => {
         </View>
         <TextInput
           placeholder={t('placeholder')}
+          placeholderTextColor={colors.cloudBurst30}
           value={query}
           onChangeText={search}
           style={styles.textInput}

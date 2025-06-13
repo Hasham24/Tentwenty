@@ -38,6 +38,7 @@ export const colors = {
   lightBlue: '#61C3F2',
   cloudBurst: '#202C43',
   cloudBurst10: 'rgba(32, 44, 67, 0.1)',
+  cloudBurst30: 'rgba(32, 44, 67, 0.3)',
   gray: '#8F8F8F',
   silverChalice: '#A6A6A6',
   silverChalice50: 'rgba(166, 166, 166, 0.5)',
