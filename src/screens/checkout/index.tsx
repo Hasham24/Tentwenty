@@ -27,7 +27,10 @@ const CheckoutTicket = () => {
         } ${cinema?.hall} `}
       />
       <View style={styles.container}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.scrollViewContent}
+          bounces={false}>
           <View style={styles.wrapper}>
             <ScrollView
               horizontal

@@ -13,6 +13,9 @@ const useStyle = () => {
       textAlign: 'center',
       fontWeight: '500',
     },
+    scrollViewContent: {
+      paddingBottom: 50,
+    },
     wrapper: {
       alignItems: 'center',
       backgroundColor: colors.whisper,

@@ -35,6 +35,7 @@ const useStyle = () => {
     zoomText: {
       fontSize: fontSize.regular,
       fontFamily: fontFamily.PoppinsMedium,
+      color: colors.cloudBurst,
     },
   });
 };
