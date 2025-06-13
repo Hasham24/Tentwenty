@@ -4,7 +4,8 @@ const useStyle = () => {
   return StyleSheet.create({
     tabBarStyle: {
       height: 75,
-      borderRadius: 27,
+      borderTopLeftRadius: 27,
+      borderTopRightRadius: 27,
       backgroundColor: colors.blackcurrant,
     },
     text: {
