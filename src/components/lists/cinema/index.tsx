@@ -5,11 +5,10 @@ import {
   Text,
   TouchableOpacity,
   FlatList,
-  Image,
   ListRenderItem,
 } from 'react-native';
+import {SeatsGrid} from '~components/';
 import {cinemaData} from '~dummyData';
-import {AppImages} from '~assets';
 import useStyle from './styles';
 
 interface ICinemaProps {
@@ -35,10 +34,10 @@ const Cinema: React.FC<ICinemaProps> = props => {
             styles.seatContainer,
             isSelected && styles.selectedSeatContainer,
           ]}>
-          <Image
-            source={AppImages.map}
-            resizeMode="contain"
-            style={styles.image}
+          <SeatsGrid
+            seats={item?.seats}
+            disabled
+            seatStyle={styles.seatStyle}
           />
         </TouchableOpacity>
         <Text style={styles.from}>

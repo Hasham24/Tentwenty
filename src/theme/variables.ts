@@ -38,6 +38,7 @@ export const colors = {
   cloudBurst10: 'rgba(32, 44, 67, 0.1)',
   gray: '#8F8F8F',
   silverChalice: '#A6A6A6',
+  silverChalice50: 'rgba(166, 166, 166, 0.5)',
   silverChalice10: 'rgba(166, 166, 166, 0.1)',
 };
 export const fontFamily = {

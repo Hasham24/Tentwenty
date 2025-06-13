@@ -19,8 +19,8 @@ const useStyle = () => {
       fontWeight: '400',
     },
     seatContainer: {
-      width: width(70),
-      height: height(30),
+      width: width(85),
+      paddingVertical: 20,
       marginRight: width(2.5),
       marginVertical: height(2),
       borderWidth: 1,
@@ -33,6 +33,11 @@ const useStyle = () => {
       borderWidth: 1,
       opacity: 1,
       borderColor: colors.lightBlue,
+    },
+    seatStyle: {
+      height: 8,
+      width: 8,
+      borderRadius: 2,
     },
     image: {
       width: width(50),

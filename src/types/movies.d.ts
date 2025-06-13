@@ -72,6 +72,11 @@ interface IMovieDetails {
   vote_average: number;
   vote_count: number;
 }
+type SeatType = 'vip' | 'regular' | 'not-available' | 'selected';
+interface ISeats {
+  id: string;
+  type: SeatType;
+}
 interface ICinema {
   id: string;
   showTime: string;
@@ -79,4 +84,5 @@ interface ICinema {
   currency: string;
   price: number;
   bonus: number;
+  seats: ISeats[][];
 }
