@@ -42,6 +42,7 @@ export const colors = {
   silverChalice: '#A6A6A6',
   silverChalice50: 'rgba(166, 166, 166, 0.5)',
   silverChalice10: 'rgba(166, 166, 166, 0.1)',
+  blackcurrant: '#2F2738',
 };
 export const fontFamily = {
   PoppinsBlack: 'Poppins-Black',

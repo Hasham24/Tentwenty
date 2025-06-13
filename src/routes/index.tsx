@@ -3,13 +3,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {
-  Movies,
   MovieDetails,
   WatchTrailer,
   SelectTicket,
   CheckoutTicket,
 } from '~screens';
 import {ScreenNames} from '~constants';
+import BottomTab from './BottomTab';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -18,7 +18,7 @@ const RoutesNavigator = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name={ScreenNames.Movies} component={Movies} />
+          <Stack.Screen name={ScreenNames.BottomTab} component={BottomTab} />
           <Stack.Screen
             name={ScreenNames.MovieDetails}
             component={MovieDetails}

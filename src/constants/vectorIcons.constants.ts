@@ -12,4 +12,5 @@ export enum ICON_TYPES {
   Octicons = 'Octicons',
   Custom = 'custom',
   Fontisto = 'Fontisto',
+  Foundation = 'Foundation',
 }

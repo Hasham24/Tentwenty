@@ -9,7 +9,6 @@ export default () => {
   const route = useRoute<ICheckoutTicketRoute>();
   const {movie, date, cinema} = route?.params || {};
   const [scale, setScale] = useState<number>(1);
-  console.log(scale);
   const handleZoomIn = useCallback(() => {
     setScale(prev => Math.min(prev + SCALE_STEP, MAX_SCALE));
   }, []);

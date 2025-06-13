@@ -11,6 +11,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import Foundation from 'react-native-vector-icons/Foundation';
 import {IconProps} from 'react-native-vector-icons/Icon';
 import {ICON_TYPES} from '~constants';
 import {colors} from '~theme';
@@ -44,6 +45,8 @@ export const VectorIcon: React.FC<IVectorIcon> = props => {
       );
     case ICON_TYPES.Entypo:
       return <Entypo name={name} color={color} {...restProps} />;
+    case ICON_TYPES.Foundation:
+      return <Foundation name={name} color={color} {...restProps} />;
     case ICON_TYPES.EvilIcons:
       return <EvilIcons name={name} color={color} {...restProps} />;
     case ICON_TYPES.Feather:

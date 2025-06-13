@@ -14,6 +14,10 @@ type RootStackParamList = {
     date: Dayjs;
     cinema: ICinema;
   };
+  dashboard: undefined;
+  mediaLibrary: undefined;
+  more: undefined;
+  bottomTab: undefined;
 };
 
 type RootScreenProps<
