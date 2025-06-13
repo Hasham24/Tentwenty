@@ -21,34 +21,6 @@ const useStyle = () => {
     scrollContainer: {
       marginBottom: 40,
     },
-    controls: {
-      flexDirection: 'row',
-      alignSelf: 'flex-end',
-      paddingHorizontal: 10,
-      marginTop: 10,
-      gap: 10,
-    },
-    bar: {
-      width: '90%',
-      height: 6,
-      marginVertical: 10,
-      borderRadius: 4,
-      opacity: 0.3,
-      backgroundColor: colors.cloudBurst,
-    },
-    zoomButton: {
-      backgroundColor: colors.white,
-      borderWidth: 1,
-      borderRadius: 20,
-      width: 36,
-      height: 36,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    zoomText: {
-      fontSize: 24,
-      fontWeight: '600',
-    },
 
     rowStyle: {
       width: '100%',

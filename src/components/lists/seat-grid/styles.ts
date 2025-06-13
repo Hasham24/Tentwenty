@@ -43,16 +43,16 @@ const useStyle = () => {
       alignSelf: 'center',
     },
     selected: {
-      backgroundColor: colors.yellow, // yellow
+      backgroundColor: colors.yellow,
     },
     vip: {
-      backgroundColor: colors.purple, // deep purple
+      backgroundColor: colors.purple,
     },
     regular: {
-      backgroundColor: colors.lightBlue, // light blue
+      backgroundColor: colors.lightBlue,
     },
     notAvailable: {
-      backgroundColor: colors.silverChalice50, // light gray
+      backgroundColor: colors.silverChalice50,
     },
   });
 };

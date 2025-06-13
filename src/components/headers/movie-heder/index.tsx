@@ -10,7 +10,7 @@ interface IHeader {
   title: string;
 }
 
-const Header: React.FC<IHeader> = props => {
+const MovieHeader: React.FC<IHeader> = props => {
   const dispatch = useDispatch();
   const styles = useStyle();
   const {t} = useTranslation('movie');
@@ -64,4 +64,4 @@ const Header: React.FC<IHeader> = props => {
     </View>
   );
 };
-export default Header;
+export default MovieHeader;

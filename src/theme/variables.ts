@@ -4,6 +4,7 @@ export const fontSize = {
   xTiny: 8,
   tiny: 10,
   small: 12,
+  xStandard: 14,
   standard: 16,
   regular: 18,
   medium: 22,

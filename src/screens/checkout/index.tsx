@@ -1,7 +1,13 @@
 import React from 'react';
-import {TouchableOpacity, View, ScrollView, Text} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {getFormattedDate} from '~utils';
-import {SafeScreen, Header, SeatsGrid} from '~components';
+import {
+  SafeScreen,
+  Header,
+  SeatsGrid,
+  CheckoutFooter,
+  Controls,
+} from '~components';
 import useSelectTicket from './useCheckoutTicket';
 import useStyle from './styles';
 
@@ -43,21 +49,12 @@ const CheckoutTicket = () => {
                 />
               </View>
             </ScrollView>
-
-            <View style={styles.controls}>
-              <TouchableOpacity
-                onPress={handleZoomOut}
-                style={styles.zoomButton}>
-                <Text style={styles.zoomText}>−</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={handleZoomIn}
-                style={styles.zoomButton}>
-                <Text style={styles.zoomText}>＋</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.bar} />
+            <Controls
+              handleZoomIn={handleZoomIn}
+              handleZoomOut={handleZoomOut}
+            />
           </View>
+          <CheckoutFooter />
         </ScrollView>
       </View>
     </SafeScreen>
